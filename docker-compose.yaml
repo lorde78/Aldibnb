@@ -1,15 +1,6 @@
 version: '3.1'
 
 services:
-    php:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        ports:
-            - '2345:80'
-        volumes:
-            - ./wordpress:/var/www/html
-
     wordpress:
         image: wordpress
         restart: always
@@ -32,7 +23,7 @@ services:
             MYSQL_PASSWORD: examplepass
             MYSQL_RANDOM_ROOT_PASSWORD: '1'
         volumes:
-            - ./datas:/var/lib/mysql
+            - ./exampledb.sql:/docker-entrypoint-initdb.d/dump.sql
 
     phpmyadmin:
         image: phpmyadmin
