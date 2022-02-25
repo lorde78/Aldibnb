@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1f38a53-e302-4e02-852f-cdb34f8ed1e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/exampledb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="f1f38a53-e302-4e02-852f-cdb34f8ed1e5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645716178867</updated>
       <workItem from="1645716181052" duration="1328000" />
+      <workItem from="1645779491578" duration="1390000" />
     </task>
     <servers />
   </component>
