@@ -12,6 +12,18 @@ function wphetic_stylesheets(){
 
 add_action('wp_enqueue_scripts', 'wphetic_stylesheets');
 
+
+/*
+* Gestion des posts
+*/
+
+add_action('admin_post_addpost_form', function (){
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    wp_redirect($_POST['_wp_http_referer'] . "?title=" . $title . "?description=" . $description);
+    exit();
+});
+
 /*
 * Créer post "Logements" sur wordpress admin
 */
