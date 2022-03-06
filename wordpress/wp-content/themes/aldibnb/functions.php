@@ -30,7 +30,7 @@ function wpm_custom_post_type() {
         'view_item'           => __( 'Voir les Logements'),
         'all_items'           => __( 'Tous les Logements'),
         'add_new_item'        => __( 'Ajouter un Logement'),
-        'add_new'             => __( 'Ajouter'),
+        'add_new'             => __( 'Ajouter un nouveau de Logemnt'),
         'edit_item'           => __( 'Editer le Logement'),
         'update_item'         => __( 'Modifier le Logement'),
         'search_items'        => __( 'Rechercher un Logement'),
@@ -41,8 +41,8 @@ function wpm_custom_post_type() {
     // On peut définir ici d'autres options pour notre custom post type
 
     $args = array(
-        'label'               => __( 'Séries TV'),
-        'description'         => __( 'Tous sur séries TV'),
+        'label'               => __( 'logement'),
+        'description'         => __( 'Tous les logements'),
         'labels'              => $labels,
         'menu_icon'           => 'dashicons-admin-home',
         // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
@@ -53,8 +53,10 @@ function wpm_custom_post_type() {
         'show_in_rest' => true,
         'hierarchical'        => false,
         'public'              => true,
-        'has_archive'         => true,
-        'rewrite'			  => array( 'slug' => 'logement'),
+        'publicly_queryable' => true,
+        'has_archive'         => false,
+        'rewrite'			  => array( 'slug' => 'logements'),
+        'menu_position' => 3,
 
     );
 
@@ -160,11 +162,12 @@ function wpm_add_taxonomies() {
 
     register_taxonomy( 'surfaces', 'logements', $args_surfaces );
 
+    
     // Caractéristiques de logements
 
     $labels_carac_logements = array(
         'name'                       => _x( 'Caractéristiques de logements', 'taxonomy general name'),
-        'singular_name'              => _x( 'Caractéristique de logements', 'taxonomy singular name'),
+        'singular_name'              => _x( 'Caractéristique de logement', 'taxonomy singular name'),
         'search_items'               => __( 'Rechercher une caractéristiques'),
         'popular_items'              => __( 'Caractéristiques populaires'),
         'all_items'                  => __( 'Toutes les caractéristiques'),
@@ -190,4 +193,80 @@ function wpm_add_taxonomies() {
     );
 
     register_taxonomy( 'caractéristiqueslogements', 'logements', $args_carac_logements );
+
+    // Prix
+
+    $labels_prix_logements = array(
+        'name'                       => _x( 'Prix de logements', 'taxonomy general name'),
+        'singular_name'              => _x( 'Prix de logement', 'taxonomy singular name'),
+        'search_items'               => __( 'Rechercher un prix'),
+        'popular_items'              => __( 'Prix populaires'),
+        'all_items'                  => __( 'Toutes les prix'),
+        'edit_item'                  => __( 'Editer une prix'),
+        'update_item'                => __( 'Mettre à jour une prix'),
+        'add_new_item'               => __( 'Ajouter un nouveau prix'),
+        'new_item_name'              => __( 'Nom de la nouveau prix'),
+        'add_or_remove_items'        => __( 'Ajouter ou supprimer une prix'),
+        'choose_from_most_used'      => __( 'Choisir parmi les prix les plus utilisées'),
+        'not_found'                  => __( 'Pas de prix trouvées'),
+        'menu_name'                  => __( 'Prix de logements'),
+    );
+
+    $args_prix_logements = array(
+        // Si 'hierarchical' est défini à true, notre taxonomie se comportera comme une catégorie standard
+        'hierarchical'          => false,
+        'labels'                => $labels_prix_logements,
+        'show_ui'               => true,
+        'show_in_rest'			=> true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'prixlogements' ),
+    );
+
+    register_taxonomy( 'prixlogements', 'logements', $args_prix_logements );
+
+
+    // Taux de nombre de personne occupation
+
+    $labels_txoccupation_logements = array(
+        'name'                       => _x( 'Txoccupation de logements', 'taxonomy general name'),
+        'singular_name'              => _x( 'Txoccupation de logement', 'taxonomy singular name'),
+        'search_items'               => __( 'Rechercher une Txoccupation'),
+        'popular_items'              => __( 'Txoccupation populaires'),
+        'all_items'                  => __( 'Toutes les Txoccupation'),
+        'edit_item'                  => __( 'Editer une Txoccupation'),
+        'update_item'                => __( 'Mettre à jour une Txoccupation'),
+        'add_new_item'               => __( 'Ajouter une nouvelle Txoccupation'),
+        'new_item_name'              => __( 'Nom de la nouvelle Txoccupation'),
+        'add_or_remove_items'        => __( 'Ajouter ou supprimer une Txoccupation'),
+        'choose_from_most_used'      => __( 'Choisir parmi les Txoccupation les plus utilisées'),
+        'not_found'                  => __( 'Pas de Txoccupation trouvées'),
+        'menu_name'                  => __( 'Txoccupation de logements'),
+    );
+
+    $args_txoccupation_logements = array(
+        // Si 'hierarchical' est défini à true, notre taxonomie se comportera comme une catégorie standard
+        'hierarchical'          => true,
+        'labels'                => $labels_txoccupation_logements,
+        'show_ui'               => true,
+        'show_in_rest'			=> true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'Txoccupationlogements' ),
+    );
+
+    register_taxonomy( 'Txoccupationlogements', 'logements', $args_txoccupation_logements );
+
 }
+
+
+//il inclus les custom post type dans la page d'acceuil
+function wpc_cpt_in_home($query) {
+    if (! is_admin() && $query->is_main_query()) {
+      if ($query->is_home) {
+        $query->set('post_type', array('post', 'property'));
+      }
+    }
+  }
+  
+  add_action('pre_get_posts','wpc_cpt_in_home');
