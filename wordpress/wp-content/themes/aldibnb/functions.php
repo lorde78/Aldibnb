@@ -69,6 +69,11 @@ function wpm_custom_post_type() {
         'has_archive'         => false,
         'rewrite'			  => array( 'slug' => 'logements'),
         'menu_position' => 3,
+        'capabilities' => array(
+            'edit_post' => 'menage_logements',
+            'read_post' => 'menage_logements',
+            'delete_post' => 'menage_logements',
+        ),
 
     );
 
@@ -282,3 +287,35 @@ function wpc_cpt_in_home($query) {
   }
   
   add_action('pre_get_posts','wpc_cpt_in_home');
+
+
+/**
+ * Modifie le rôle de l'admin, quand on active le theme
+ */
+
+add_action('after_switch_theme', function() {
+    $admin = get_role('administrator');
+    $admin->add_cap('menage_events');
+});
+
+
+/**
+ * Ajout d'un nouveau rôle, quand on active le theme
+ */
+
+ add_action('after_switch_theme', function() {
+     add_role('logements_manager', 'Logements Manager', [
+         'read' => true,
+         'manage_logements' => true
+     ]);
+});
+
+/**
+ * Suppresion d'un nouveau rôle, quand on switch de theme
+ */
+
+ add_action('switch_theme', function() {
+        $admin = get_role('administrator');
+        $admin->remove_cap('menage_events');
+        remove_role('logements_menager');
+});
