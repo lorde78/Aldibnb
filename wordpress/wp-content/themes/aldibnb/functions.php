@@ -14,21 +14,16 @@ function wphetic_stylesheets()
 
 add_action('wp_enqueue_scripts', 'wphetic_stylesheets');
 
+
 /*
-* Ajouter nos propres metadonnées
+* Ajouter nos propres metadonnées dans la base de donées
 */
 
-function aldibnb_meta_box(){
-    add_meta_box(
-        'descriptions',
-        'La description du logement',
-        'aldibnb_metabox_render',
-        'post',
-        'side'
-    );
-}
+require_once 'classes/SponsoBox.php';
+$sponso = new SponsoBox('aldibnb_sponso');
 
-add_action('add_meta_boxes', 'aldibnb_meta_box');
+
+
 
 /*
 * Gestion des posts
