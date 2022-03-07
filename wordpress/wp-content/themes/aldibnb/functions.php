@@ -19,48 +19,8 @@ add_action('wp_enqueue_scripts', 'wphetic_stylesheets');
 * Ajouter nos propres metadonnées dans la base de donées
 */
 
-require_once 'classes/SponsoBox.php';
-$sponso = new SponsoBox('aldibnb_sponso');
-
-
-
-
-/*
-* Gestion des posts
-*/
-
-add_action('admin_post_addpost_form', function () {
-    /*$title = $_POST['title'];
-    $description = $_POST['description'];
-    $localisation = $_POST['localisation'];
-    $type = $_POST['type'];
-    $surface = $_POST['surface'];
-    $caracteristiques = $_POST['caracteristiques'];
-    $prix = $_POST['prix'];
-    $txoccup = $_POST['txoccup'];
-    wp_redirect($_POST['_wp_http_referer'] . "?title=" . $title . "?description=" . $description . "?localisation=" . $localisation . "?type=" . $type . "?surface=" . $surface . "?caracteristiques=" . $caracteristiques . "?prix=" . $prix . "?=txoccup" . $txoccup);
-    exit();
-    */
-    $args_logement = array(
-        'post_title'    => $_POST['title'],
-        'post_content'  => $_POST['description'],
-        'post_status'   => 'publish',
-        'post_type' => 'logements',
-        'post_author'   => get_current_user_id(),
-        'meta_input' => array(
-            'description' => $_POST['description'],
-            'prix' => $_POST['prix']
-        ),
-        /*'tax_input' => array( 
-            'taxonomy_name' => array( 
-                'Maison',
-                'Loft' 
-            ) 
-        )*/
-      );
-
-      wp_insert_post( $args_logement );
-});
+require_once 'classes/Caracteristiques.php';
+$caracteristiques = new Caracteristiques('aldibnb_caracteristiques');
 
 /*
 * Créer post "Logements" sur wordpress admin
