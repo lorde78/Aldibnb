@@ -3,10 +3,12 @@ class SponsoBox{
 
     private $metakey;
     private $description;
+    private $prix;
 
     public function __construct($metakey){
         $this->metakey = $metakey;
         $this->description = $metakey . '_description';
+        $this->prix = $metakey . '_prix';
         $this->register();
     }
 
@@ -17,8 +19,8 @@ class SponsoBox{
 
     public function aldibnb_add_metabox(){
         add_meta_box(
-            'descriptions',
-            'La description du logement',
+            'prix',
+            'Le prix du logement',
             [$this, 'aldibnb_metabox_render'],
             'logements',
             'side'
@@ -28,9 +30,13 @@ class SponsoBox{
     public function  aldibnb_metabox_render($post){
 
         $description = get_post_meta($post->ID, $this->description, true) ? : null;
+        $prix = get_post_meta($post->ID, $this->prix, true) ? : null;
         ?>
         <input type="text" name="<?= $this->description; ?>" id="description" value="<?= $description; ?>">
         <label for="description">La déscription du logement</label>
+
+        <input type="text" name="<?= $this->prix; ?>" id="prix" value="<?= $prix; ?>">
+        <label for="prix">Le prix du logement</label>
         <?php
     }
 
@@ -39,6 +45,12 @@ class SponsoBox{
             update_post_meta($post_id, $this->description , $_POST[$this->description]);
         } else {
             delete_post_meta($post_id, $this->description);
+        }
+        
+        if(isset($_POST[$this->prix])) {
+            update_post_meta($post_id, $this->prix , $_POST[$this->prix]);
+        } else {
+            delete_post_meta($post_id, $this->prix);
         }
     }
 
