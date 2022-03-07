@@ -48,9 +48,15 @@ add_action('admin_post_addpost_form', function () {
         'post_type' => 'logements',
         'post_author'   => get_current_user_id(),
         'meta_input' => array(
-            'prixlogements' => $_POST['prix'],
-            'surfaces' => $_POST['surface'],
-        )
+            'description' => $_POST['description'],
+            'prix' => $_POST['prix']
+        ),
+        /*'tax_input' => array( 
+            'taxonomy_name' => array( 
+                'Maison',
+                'Loft' 
+            ) 
+        )*/
       );
 
       wp_insert_post( $args_logement );
