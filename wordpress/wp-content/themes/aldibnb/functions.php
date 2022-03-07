@@ -127,6 +127,12 @@ function wpm_add_taxonomies()
         'update_count_callback' => '_update_post_term_count',
         'query_var'             => true,
         'rewrite'               => array('slug' => 'realisateurs'),
+        'capabilities' => array(
+            'manage_terms' => 'manage_logements',
+            'edit_terms' => 'edit_logements',
+            'delete_terms' => 'delete_logements',
+            'assign_terms' => 'assign_logements',
+        )
     );
 
     register_taxonomy('types', 'logements', $args_types);
