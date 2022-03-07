@@ -131,47 +131,17 @@ add_action('init', 'wpm_custom_post_type', 0);
 
 add_action('init', 'wpm_add_taxonomies', 0);
 
-//On crée nos taxonomies personnalisées: Localisation, Type, Surface, TxOccupation, Prix, Disponibilité, Caractéristiques
+//On crée nos taxonomies personnalisées: Type
 
 function wpm_add_taxonomies()
 {
-
-    // Taxonomie Localisation
-
-    // On déclare ici les différentes dénominations de notre taxonomie qui seront affichées et utilisées dans l'administration de WordPress
-    $labels_localisations = array(
-        'name'                          => _x('Localisations', 'taxonomy general name'),
-        'singular_name'                 => _x('Localisation', 'taxonomy singular name'),
-        'search_items'                  => __('Chercher une localisation'),
-        'all_items'                        => __('Toutes les localisation'),
-        'edit_item'                     => __('Editer la localisation'),
-        'update_item'                   => __('Mettre à jour la localisation'),
-        'add_new_item'                     => __('Ajouter une nouvelle localisation'),
-        'new_item_name'                 => __('Valeur de la nouvelle localisation'),
-        'separate_items_with_commas'    => __('Séparer les réalisateurs avec une virgule'),
-        'menu_name'         => __('Localisation'),
-    );
-
-    $args_localisations = array(
-        // Si 'hierarchical' est défini à false, notre taxonomie se comportera comme une étiquette standard
-        'hierarchical'      => false,
-        'labels'            => $labels_localisations,
-        'show_ui'           => true,
-        'show_in_rest' => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array('slug' => 'localisation'),
-    );
-
-    register_taxonomy('localisations', 'logements', $args_localisations);
-
     // Taxonomie Type
 
     $labels_types = array(
-        'name'                       => _x('Types', 'taxonomy general name'),
-        'singular_name'              => _x('Type', 'taxonomy singular name'),
+        'name'                       => _x('types', 'taxonomy general name'),
+        'singular_name'              => _x('type', 'taxonomy singular name'),
         'search_items'               => __('Rechercher un type'),
-        'popular_items'              => __('Type populaire'),
+        'popular_items'              => __('type populaire'),
         'all_items'                  => __('Tous les types'),
         'edit_item'                  => __('Editer un type'),
         'update_item'                => __('Mettre à jour un type'),
@@ -179,7 +149,7 @@ function wpm_add_taxonomies()
         'add_or_remove_items'        => __('Ajouter ou supprimer un type'),
         'choose_from_most_used'      => __('Choisir parmi les plus utilisés'),
         'not_found'                  => __('Pas de types trouvés'),
-        'menu_name'                  => __('Types'),
+        'menu_name'                  => __('types'),
     );
 
     $args_types = array(
@@ -195,130 +165,6 @@ function wpm_add_taxonomies()
 
     register_taxonomy('types', 'logements', $args_types);
 
-    // Taxonomy Surface
-
-    $labels_surfaces = array(
-        'name'                       => _x('Surfaces', 'taxonomy general name'),
-        'singular_name'              => _x('Surface', 'taxonomy singular name'),
-        'search_items'               => __('Rechercher une surface'),
-        'popular_items'              => __('Surface populaire'),
-        'all_items'                  => __('Toutes les surfaces'),
-        'edit_item'                  => __('Editer une surface'),
-        'update_item'                => __('Mettre à jour une surface'),
-        'add_new_item'               => __('Ajouter un nouvelle surface'),
-        'add_or_remove_items'        => __('Ajouter ou supprimer une surface'),
-        'choose_from_most_used'      => __('Choisir parmi les surfaces plus utilisés'),
-        'not_found'                  => __('Pas de Surfaces trouvés'),
-        'menu_name'                  => __('Surface'),
-    );
-
-    $args_surfaces = array(
-        // Si 'hierarchical' est défini à true, notre taxonomie se comportera comme une catégorie standard
-        'hierarchical'          => true,
-        'labels'                => $labels_surfaces,
-        'show_ui'               => true,
-        'show_in_rest'            => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array('slug' => 'surfaces'),
-    );
-
-    register_taxonomy('surfaces', 'logements', $args_surfaces);
-
-
-    // Caractéristiques de logements
-
-    $labels_carac_logements = array(
-        'name'                       => _x('Caractéristiques de logements', 'taxonomy general name'),
-        'singular_name'              => _x('Caractéristique de logement', 'taxonomy singular name'),
-        'search_items'               => __('Rechercher une caractéristiques'),
-        'popular_items'              => __('Caractéristiques populaires'),
-        'all_items'                  => __('Toutes les caractéristiques'),
-        'edit_item'                  => __('Editer une caractéristique'),
-        'update_item'                => __('Mettre à jour une caractéristique'),
-        'add_new_item'               => __('Ajouter une nouvelle caractéristique'),
-        'new_item_name'              => __('Nom de la nouvelle caractéristique'),
-        'add_or_remove_items'        => __('Ajouter ou supprimer une caractéristique'),
-        'choose_from_most_used'      => __('Choisir parmi les caractéristiques les plus utilisées'),
-        'not_found'                  => __('Pas de caractéristiques trouvées'),
-        'menu_name'                  => __('Caractéristiques de logements'),
-    );
-
-    $args_carac_logements = array(
-        // Si 'hierarchical' est défini à true, notre taxonomie se comportera comme une catégorie standard
-        'hierarchical'          => true,
-        'labels'                => $labels_carac_logements,
-        'show_ui'               => true,
-        'show_in_rest'            => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array('slug' => 'caractéristiqueslogements'),
-    );
-
-    register_taxonomy('caractéristiqueslogements', 'logements', $args_carac_logements);
-
-    // Prix
-
-    $labels_prix_logements = array(
-        'name'                       => _x('Prix de logements', 'taxonomy general name'),
-        'singular_name'              => _x('Prix de logement', 'taxonomy singular name'),
-        'search_items'               => __('Rechercher un prix'),
-        'popular_items'              => __('Prix populaires'),
-        'all_items'                  => __('Toutes les prix'),
-        'edit_item'                  => __('Editer une prix'),
-        'update_item'                => __('Mettre à jour une prix'),
-        'add_new_item'               => __('Ajouter un nouveau prix'),
-        'new_item_name'              => __('Nom de la nouveau prix'),
-        'add_or_remove_items'        => __('Ajouter ou supprimer une prix'),
-        'choose_from_most_used'      => __('Choisir parmi les prix les plus utilisées'),
-        'not_found'                  => __('Pas de prix trouvées'),
-        'menu_name'                  => __('Prix de logements'),
-    );
-
-    $args_prix_logements = array(
-        // Si 'hierarchical' est défini à true, notre taxonomie se comportera comme une catégorie standard
-        'hierarchical'          => false,
-        'labels'                => $labels_prix_logements,
-        'show_ui'               => true,
-        'show_in_rest'            => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array('slug' => 'prixlogements'),
-    );
-
-    register_taxonomy('prixlogements', 'logements', $args_prix_logements);
-
-
-    // Taux de nombre de personne occupation
-
-    $labels_txoccupation_logements = array(
-        'name'                       => _x('Txoccupation de logements', 'taxonomy general name'),
-        'singular_name'              => _x('Txoccupation de logement', 'taxonomy singular name'),
-        'search_items'               => __('Rechercher une Txoccupation'),
-        'popular_items'              => __('Txoccupation populaires'),
-        'all_items'                  => __('Toutes les Txoccupation'),
-        'edit_item'                  => __('Editer une Txoccupation'),
-        'update_item'                => __('Mettre à jour une Txoccupation'),
-        'add_new_item'               => __('Ajouter une nouvelle Txoccupation'),
-        'new_item_name'              => __('Nom de la nouvelle Txoccupation'),
-        'add_or_remove_items'        => __('Ajouter ou supprimer une Txoccupation'),
-        'choose_from_most_used'      => __('Choisir parmi les Txoccupation les plus utilisées'),
-        'not_found'                  => __('Pas de Txoccupation trouvées'),
-        'menu_name'                  => __('Txoccupation de logements'),
-    );
-
-    $args_txoccupation_logements = array(
-        // Si 'hierarchical' est défini à true, notre taxonomie se comportera comme une catégorie standard
-        'hierarchical'          => true,
-        'labels'                => $labels_txoccupation_logements,
-        'show_ui'               => true,
-        'show_in_rest'            => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array('slug' => 'Txoccupationlogements'),
-    );
-
-    register_taxonomy('Txoccupationlogements', 'logements', $args_txoccupation_logements);
 }
 
 /*
@@ -343,7 +189,7 @@ add_action('pre_get_posts', 'wpc_cpt_in_home');
  * Modifie le rôle de l'admin, quand on active le theme
  */
 
-add_action('after_switch_theme', function () {
+add_action('init', function () {
     $admin = get_role('administrator');
     $admin->add_cap('manage_logements');
 });
