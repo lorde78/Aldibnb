@@ -1,0 +1,16 @@
+/*
+Theme Name: MonTheme
+Author: Amin,Basil,Eduardo
+Description: Mon premier thème !
+Requires at least: WordPress 5.0
+Version: 1.0
+*/
+
+.menu {
+    position: fixed;
+    top: 0px;
+}
+
+.admin-bar .menu {
+	top: 32px; /* on prend en compte le décalage */
+}

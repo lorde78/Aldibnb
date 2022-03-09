@@ -1,0 +1,28 @@
+<?php
+/*
+Template Name: Page Inscription
+*/
+?>
+
+
+<form action="<?=admin_url('admin-post.php'); ?>" name="inscriptionform" method="POST" >
+    <div>
+        <label for="inputIdentifiant" class="form-label"> Identifiant</label>
+        <input type="text" class="form-control" name="identifiant" id="inputIdentifiant">
+    </div>
+    <div>
+        <label for="inputEmail" class="form-label"> Email</label>
+        <input type="text" class="form-control" name="email" id="inputEmail">
+    </div>
+    <div>
+        <label for="inputPassword" class="form-label"> Password</label>
+        <input type="password" class="form-control" name="password" id="inputPassword">
+    </div>
+
+    <input type="hidden" name="action" value="inscription_form">
+    <?php wp_referer_field(); ?>
+
+    <input type="submit" class="submitButton" name="submit" value="Se connecter">
+    <input type="hidden" name="task" value="register" />
+
+</form>
