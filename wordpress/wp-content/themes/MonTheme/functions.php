@@ -43,3 +43,19 @@ $caracteristiques = new Caracteristiques('MonTheme_caracteristiques');
 
 // Fonctionnalités filtre
 require_once get_template_directory() . '/inc/post-filtre.php';
+
+// Pagination
+function MonTheme_paginate_links(){
+
+    echo'<nav>';
+    echo'<ul>';
+    $pages = paginate_links(['type' => 'array']);
+    foreach ($pages as $page){
+        echo '<li>';
+        echo str_replace('page_numbers', 'page-link', $page);
+        echo '</li>';
+    }
+    echo '</ul>';
+    echo '</nav>';
+    
+}
