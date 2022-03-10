@@ -5,7 +5,7 @@ Template Name: Page Inscription
 ?>
 
 
-<form action="<?=admin_url('admin-post.php'); ?>" name="inscriptionform" method="POST" >
+<form action="<?=admin_url('admin-post.php?action=inscription'); ?>" name="inscriptionform" method="POST" >
     <div>
         <label for="inputIdentifiant" class="form-label"> Identifiant</label>
         <input type="text" class="form-control" name="identifiant" id="inputIdentifiant">

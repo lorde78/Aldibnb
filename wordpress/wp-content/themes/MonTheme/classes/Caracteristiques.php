@@ -6,6 +6,7 @@ class Caracteristiques{
     private $prix;
     private $surface;
     private $nombre_de_chambres;
+    private $nombreDePersonne;
 
     public function __construct($metakey){
         $this->metakey = $metakey;
@@ -13,6 +14,7 @@ class Caracteristiques{
         $this->prix = $metakey . '_prix';
         $this->surface = $metakey . '_surface';
         $this->nombre_de_chambres = $metakey . '_nombredechambres';
+        $this->nombreDePersonne = $metakey . '_nombreDePersonne';
         $this->register();
     }
 
@@ -37,6 +39,7 @@ class Caracteristiques{
         $prix = get_post_meta($post->ID, $this->prix, true) ? : null;
         $surface = get_post_meta($post->ID, $this->surface, true) ? : null;
         $nombre_de_chambres = get_post_meta($post->ID, $this->nombre_de_chambres, true) ? : null;
+        $nombreDePersonne = get_post_meta($post->ID, $this->nombreDePersonne, true) ? : null;
         ?>
         
         <label for="description">La déscription du logement</label>
@@ -49,8 +52,11 @@ class Caracteristiques{
         <label for="surface">La surface du logement</label>
         <input type="number" name="<?= $this->surface; ?>" id="surface" value="<?= $surface; ?>"><br/>
         
-        <label for="nombredechambres">Le prix du logement</label>
-        <input type="text" name="<?= $this->nombre_de_chambres; ?>" id="nombredechambres" value="<?= $nombre_de_chambres; ?>">
+        <label for="nombredechambres">Le nombre de chambres</label>
+        <input type="number" name="<?= $this->nombre_de_chambres; ?>" id="nombredechambres" value="<?= $nombre_de_chambres; ?>">
+
+        <label for="nombreDePersonne">Nombre de Personne</label>
+        <input type="number" name="<?= $this->nombreDePersonne; ?>" id="nombreDePersonne" value="<?= $nombreDePersonne; ?>">
         <?php
     }
 
@@ -77,6 +83,12 @@ class Caracteristiques{
             update_post_meta($post_id, $this->nombre_de_chambres , $_POST[$this->nombre_de_chambres]);
         } else {
             delete_post_meta($post_id, $this->nombre_de_chambres);
+        }
+
+        if(isset($_POST[$this->nombreDePersonne])) {
+            update_post_meta($post_id, $this->nombreDePersonne , $_POST[$this->nombreDePersonne]);
+        } else {
+            delete_post_meta($post_id, $this->nombreDePersonne);
         }
     }
 
