@@ -13,29 +13,27 @@
 
 //Inscription
 
-add_action('admin_post_inscription', function () {
+$listeConnexion = add_action('admin_post_inscription_form', function () {
     $password = $_POST['password'];
     $identifiant = $_POST['identifiant'];
     $email = $_POST['email'];
     echo "yyyyyyyyyyyyyyyyyyyyyyy";
 
     wp_redirect( $_POST['_wp_http_referer'] . "?password" . $password . "?identifiant" . $identifiant . "?email" . $email);
-    //exit();
+    $let = [$password,$identifiant,$email];
 
-    return [$password,$identifiant,$email];
-
+    var_dump($let);
+    $user_id = wp_insert_user( array(
+        'user_login' => $identifiant,
+        'user_pass' => $password,
+        'user_email' => $email,
+        //'first_name' => 'Jasne',
+        //'last_name' => 'Does',
+        //'display_name' => 'Jane Doe',
+        'role' => 'editor'
+      ));
     
 });
-
-$user_id = wp_insert_user( array(
-    'user_login' => 'janesdoe',
-    'user_pass' => 'passwsordgoeshere',
-    'user_email' => 'sssssssssssjanse.doe@example.com',
-    'first_name' => 'Jasne',
-    'last_name' => 'Does',
-    'display_name' => 'Jane Doe',
-    'role' => 'editor'
-  ));
 //wp_create_user( 'johndoe', 'passwordgoeshere', 'john.doe@example.com' );
 
 /**
