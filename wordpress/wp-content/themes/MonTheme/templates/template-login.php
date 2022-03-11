@@ -4,7 +4,13 @@ Template Name: Page de connexion
 */
 ?>
 
-<form action="<?= home_url('wp-login.php'); ?>" name="loginform" method="POST">
+<?php
+if (is_user_logged_in()) {
+    wp_redirect( home_url() );
+    exit;
+} else { ?>
+    
+    <form action="<?= home_url('wp-login.php'); ?>" name="loginform" method="POST">
     <div>
         <label for="inputEmail" class="form-label"> Email address</label>
         <input type="text" class="form-control" name="log" id="inputEmail">
@@ -23,3 +29,4 @@ Template Name: Page de connexion
     <input type="hidden" name="redirect_to" value="<?= home_url(); ?>">
 
 </form>
+<?php  } ?>
