@@ -30,29 +30,32 @@ $query_bordeaux = displayPostPerCategory('localisation', "Bordeaux");
 $arrayPostPerCategoryType = [$query_loft, $query_appartement, $query_villa];
 $arrayPostPerCity = [$query_paris, $query_lille, $query_dijon, $query_bordeaux];
 ?>
+<div class="wrapper_article_hp">
+    <h1>Nos villes</h1>
+    <?php
+    for ($i = 0; $i <= count($arrayPostPerCity) - 1; $i++) {
+        if ($arrayPostPerCity[$i]->have_posts()) :
+            while ($arrayPostPerCity[$i]->have_posts()) : $arrayPostPerCity[$i]->the_post(); ?>
+                <?php get_template_part('partials/post-ville'); ?>
+    <?php endwhile;
+        endif;
 
-<h1>Nos villes :</h1>
-<?php
-for ($i = 0; $i <= count($arrayPostPerCity) - 1; $i++) {
-    if ($arrayPostPerCity[$i]->have_posts()) :
-        while ($arrayPostPerCity[$i]->have_posts()) : $arrayPostPerCity[$i]->the_post(); ?>
-            <?php get_template_part('partials/post-ville'); ?>
-<?php endwhile;
-    endif;
-    wp_reset_postdata();
-} ?>
+        wp_reset_postdata();
+    } ?>
+</div>
 
-<h1>Nos Tendances :</h1>
-<?php
-for ($i = 0; $i <= count($arrayPostPerCategoryType) - 1; $i++) {
-    if ($arrayPostPerCategoryType[$i]->have_posts()) :
-        while ($arrayPostPerCategoryType[$i]->have_posts()) : $arrayPostPerCategoryType[$i]->the_post(); ?>
-            <?php get_template_part('partials/post-render'); ?>
-<?php endwhile;
-    endif;
-    wp_reset_postdata();
-} ?>
-
+<div class="wrapper_article_hp">
+    <h1>Types de logements</h1>
+    <?php
+    for ($i = 0; $i <= count($arrayPostPerCategoryType) - 1; $i++) {
+        if ($arrayPostPerCategoryType[$i]->have_posts()) :
+            while ($arrayPostPerCategoryType[$i]->have_posts()) : $arrayPostPerCategoryType[$i]->the_post(); ?>
+                <?php get_template_part('partials/post-type'); ?>
+    <?php endwhile;
+        endif;
+        wp_reset_postdata();
+    } ?>
+</div>
 
 
 

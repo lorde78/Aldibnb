@@ -6,7 +6,38 @@ Requires at least: WordPress 5.0
 Version: 1.0
 */
 
-p {
-    color: red;
+body {
+  margin: 0 auto;
+  color: #172b4d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.175;
+    margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 1.23333;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f5f8;
+  height: 30vh;
+  padding: 0 80px;
+}
+
+.header img {
+  width: 80px;
+}
+
 

@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
     <header class="header">
         <a href="<?php echo home_url( '/' ); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/OIPHVAMAD7K.jpg" alt="Logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Logo">
         </a>
         
         <?php 
