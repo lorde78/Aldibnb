@@ -6,6 +6,8 @@ Requires at least: WordPress 5.0
 Version: 1.0
 */
 
+/* Global */
+
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +36,8 @@ h2 {
 ul {
   list-style: none;
 }
+
+/* Header */
 
 .header {
   display: flex;
