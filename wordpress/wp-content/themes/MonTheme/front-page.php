@@ -46,8 +46,9 @@ $arrayPostPerCity = [$query_paris, $query_lille, $query_dijon, $query_bordeaux];
     </div>
 </div>
 
-<div>
+<section class="sectionTypeDeLogements">
     <h1>Types de logements</h1>
+    <div class="sectionTypeDeLogementsFrontPage">
     <?php
     for ($i = 0; $i <= count($arrayPostPerCategoryType) - 1; $i++) {
         if ($arrayPostPerCategoryType[$i]->have_posts()) :
@@ -57,7 +58,8 @@ $arrayPostPerCity = [$query_paris, $query_lille, $query_dijon, $query_bordeaux];
         endif;
         wp_reset_postdata();
     } ?>
-</div>
+    <div>
+</section>
 
 
 
