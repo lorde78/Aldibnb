@@ -28,13 +28,7 @@ function MonTheme_register_assets() {
         array(), 
         '1.0'
     );
-  	
-    // Déclarer un autre fichier CSS
-    wp_enqueue_style( 
-        'MonTheme', 
-        get_template_directory_uri() . '/css/main.css',
-        array(), 
-        '1.0'
-    );
+
+    
 }
 add_action( 'wp_enqueue_scripts', 'MonTheme_register_assets' );
