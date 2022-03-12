@@ -3,12 +3,13 @@
 
 //voir apres avec l'ajout personalisé du rôle custom post 
 
-//add_action('after_setup_theme', 'remove_admin_bar');
-//function remove_admin_bar() {
-//    if (!current_user_can('subscriber') && !is_admin()) {
-//        show_admin_bar(false);
-//    }
-//}
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar()
+{
+    if (!is_admin()) {
+        show_admin_bar(false);
+    }
+}
 
 
 //Inscription
@@ -27,10 +28,9 @@ $listeConnexion = add_action('admin_post_inscription_form', function () {
         'user_login' => $identifiant,
         'user_pass' => $password,
         'user_email' => $email,
-        'role' => 'editor'
+        'role' => 'subscriber'
     ));
 });
-//wp_create_user( 'johndoe', 'passwordgoeshere', 'john.doe@example.com' );
 
 
 //Envoyer le formulaire 
@@ -62,10 +62,6 @@ $listePublicationPost = add_action('admin_post_publier_form', function () {
     );
 
     wp_insert_post($post_args);
-    
-
-
-    //wp_redirect($_POST['_wp_http_referer'] . "?Titre" . $titre . "?contenu" . $contenu . "?Prix" . $prix);
 });
 
 

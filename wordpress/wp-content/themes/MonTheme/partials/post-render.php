@@ -27,4 +27,3 @@
                 <?php the_content(); ?>
             </div>
         </article>
-        <hr>

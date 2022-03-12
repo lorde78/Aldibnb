@@ -103,3 +103,46 @@ ul {
   border: 2px black solid;
   padding: 40px;
 }
+
+
+.maSectionTypedeLogement {
+  margin: 0px;
+}
+
+/* Annonce par logement */
+.postTypeParlogemet{
+  padding: 50px 20px;
+}
+
+/* footer*/
+.site__footer {
+  height: 60px;
+  width: 100%;
+  background-color: #172b4d;
+}
+/*formulaire de recherche*/
+.searchFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+/*.typeDeLogementsFrontPage {
+  
+
+}*/
+.sectionTypeDeLogementsFrontPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.sectionTypeDeLogementsFrontPage .postTypeParlogemet {
+  border: 1px black solid;
+}
+
+
+
+
