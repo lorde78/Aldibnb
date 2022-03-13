@@ -27,6 +27,7 @@ register_sidebar(array(
 ));
 
 
+
 /*
 * Ajouter nos propres metadonnées dans la base de donées
 */

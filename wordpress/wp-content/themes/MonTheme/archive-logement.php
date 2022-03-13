@@ -6,7 +6,7 @@ Template Name: Page Archives Catalogue
 
 <?php get_header(); ?>
 <?php get_template_part('templates/template-searchFilter') ?>
-<h1 class="site__heading">Le Catalogue de logements</h1>
+<h1>Le Catalogue de logements</h1>
 
 <div class="site__logements">
     <main class="site__content">

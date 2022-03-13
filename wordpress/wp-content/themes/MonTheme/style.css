@@ -34,6 +34,15 @@ h2 {
   line-height: 1.23333;
 }
 
+h3{
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+h3 a{
+  color: #172b4d;
+}
+
 ul {
   list-style: none;
 }
@@ -98,11 +107,18 @@ ul {
   display: block;
   bottom: 20px;
   right: 25px;
+  color: #fff;
+  font-weight: 600;
 }
+
 
 .main-btn:hover {
   background-position: 100%;
   color: #172b4d;
+}
+
+.main-btn {
+  color:fff;
 }
 
 .cards {
@@ -168,7 +184,7 @@ ul {
 .section_types_logements {
   display: flex;
   flex-direction: column;
-  padding: 70px 20px 70px 20px;
+  padding: 70px 80px 70px 80px;
 }
 
 .section_cities h2,
@@ -183,4 +199,6 @@ ul {
   gap: 50px;
 }
 
+
+/* page logement  */
 
