@@ -3,13 +3,13 @@
 
 //voir apres avec l'ajout personalisé du rôle custom post 
 
-// add_action('after_setup_theme', 'remove_admin_bar');
-// function remove_admin_bar()
-// {
-//     if (current_user_can('editor')) {
-//         show_admin_bar(false);
-//     }
-// }
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar()
+{
+    if (current_user_can('editor')) {
+        show_admin_bar(false);
+    }
+}
 
 
 //Inscription
@@ -34,33 +34,37 @@ $listeConnexion = add_action('admin_post_nopriv_inscription_form', function () {
 
 //Envoyer le formulaire 
 $listePublicationPost = add_action('admin_post_publier_form', function () {
-	$titre = $_POST['Titre'];
-	$contenu = $_POST['contenu'];
-	$ville = $_POST['ville'];
-	$typeLogement = $_POST['typeLogement'];
-	$prix = $_POST['Prix'];
-	$description = $_POST['Description'];
-	$surface = $_POST['NbrPersonne'];
-	$images = $_POST['images'];
+
+    $titre = $_POST['Titre'];
+    $contenu = $_POST['contenu'];
+    $ville = $_POST['ville'];
+    $typeLogement = $_POST['typeLogement'];
+    $prix = $_POST['Prix'];
+    $description = $_POST['Description'];
+    $surface = $_POST['surface'];
+    $NbrPersonne = $_POST['NbrPersonne'];
+    $images = $_POST['my_image_upload'];
+    $NbrDeChambre = $_POST['NbrDeChambre'];
 
 
-	$post_args = array(
-		'post_type' => 'logement',
-		'post_content' => $contenu,
-		'post_title' => $titre,
-		'post_status' => 'pending',
-		'post_author' => get_current_user_id(),
-		//'comment_status' => 'closed',
-		'meta_input' => array(
-			'prix' => $prix,
-			'typeLogement' => $typeLogement,
-			'ville' => $ville,
-			'description' => $description,
-			'surface' => $surface,
-		)
-	);
+    $post_args = array(
+        'post_type' => 'logement',
+        'post_content' => 'Contenu: ' .$contenu.', Ville: '.$ville.', Type de Logement '.$typeLogement.', Prix: '.$prix.', Surface '.$surface.', Nombre de personnes'.$NbrPersonne.", Image: ".$images.", Description : ".$description.', Nombre de chambres: '.$NbrDeChambre,
+        'post_title' => $titre,
+        'post_status' => 'pending',
+        'post_author' => get_current_user_id(),
+    );
 
-	wp_insert_post($post_args);
+    if(wp_verify_nonce( $_POST['my_image_upload'], 'my_image_upload')) {
+        $attachement_id = media_handle_upload('my_image_upload', 0);
+    }else {
+        wp_redirect($_POST['_wp_http_referer'] . '?status=no_nonce');
+    }
+
+    wp_insert_post($post_args);
+    wp_redirect(home_url());
+
+
 });
 
 
@@ -78,15 +82,17 @@ add_action('init', function () {
  * Ajout d'un nouveau rôle, quand on active le theme
  */
 
-add_action('after_switch_theme', function () {
-	add_role('logements_manager', 'Logements Manager', [
-		'manage_logements' => true,
-		'edit_genre' => true,
-		'delete_genre' => true,
-		'assign_genre' => true,
-		'manage_logements' => true,
-		'manage_logements' => true,
-	]);
+
+add_action('init', function () {
+    add_role('logements_manager', 'Logements Manager', [
+        'manage_logements' => true,
+        'edit_genre' => true,
+        'delete_genre' => true,
+        'assign_genre' => true,
+        'manage_logements' => true,
+        'manage_logements' => true,
+    ]);
+
 });
 
 /**
@@ -98,3 +104,6 @@ add_action('switch_theme', function () {
 	$admin->remove_cap('manage_logements');
 	remove_role('logements_manager');
 });
+
+
+

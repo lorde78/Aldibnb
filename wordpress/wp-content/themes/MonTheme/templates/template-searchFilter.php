@@ -1,4 +1,5 @@
 <?php
+//Système de filtre pour rechercher des annonces
 $terms = get_terms(['taxonomy' => 'localisation']);
 foreach ($terms as $term) {
 	$listeVille[] = $term->name;

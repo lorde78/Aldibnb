@@ -21,7 +21,7 @@ add_action('pre_get_posts', function (WP_Query $query) {
         $meta_query[] = [
             'key' => "MonTheme_caracteristiques_prix",
             'value' => get_query_var('prix'),
-            'compare' => '<=',
+            'compare' => '==',
             'type' => 'NUMERIC'
         ];
         $query->set('meta_query', $meta_query);
@@ -58,7 +58,7 @@ add_action('pre_get_posts', function (WP_Query $query) {
         $meta_query[] = [
             'key' => "MonTheme_caracteristiques_surface",
             'value' => get_query_var('surface'),
-            'compare' => '<=',
+            'compare' => '==',
             'type' => 'NUMERIC'
         ];
         $query->set('meta_query', $meta_query);

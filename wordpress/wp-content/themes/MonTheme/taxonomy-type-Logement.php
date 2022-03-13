@@ -5,6 +5,7 @@
             get_template_part('partials/post-type');
         endwhile;
     endif; ?>
+    <?php wp_reset_postdata(); ?>
 </section>
 
 <?php get_footer(); ?>

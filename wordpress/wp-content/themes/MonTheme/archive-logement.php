@@ -8,7 +8,6 @@ Template Name: Page Archives Catalogue
 <section class="main">
 	<?php get_template_part('templates/template-searchFilter') ?>
 	<h1>Le Catalogue de logements</h1>
-
 	<section class="catalogue">
 		<main class="catalogue_container">
 			<?php if (have_posts()) : while (have_posts()) : the_post();
@@ -25,5 +24,6 @@ Template Name: Page Archives Catalogue
 		</aside>
 	</section>
 </section>
+
 
 <?php get_footer(); ?>
