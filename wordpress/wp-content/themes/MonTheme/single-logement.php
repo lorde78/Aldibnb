@@ -25,7 +25,11 @@ endif; ?>
       ));
       ?>
     </ol>
-  <?php endif; ?>
+  <?php else : ?>
+    <p class="comments__none">
+      Il n'y a pas de commentaires pour le moment!
+    </p>
+  <? endif; ?>
 </div>
 <?php
 $terms_slug = [];
