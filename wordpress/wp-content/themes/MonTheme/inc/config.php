@@ -21,9 +21,6 @@ function MonTheme_register_assets()
         '1.0',
         true
     );
-
-    // Déclarer style.css à la racine du thème
-    wp_enqueue_style( 'style.css', get_stylesheet_uri() );
 }
 add_action('wp_enqueue_scripts', 'MonTheme_register_assets');
 
