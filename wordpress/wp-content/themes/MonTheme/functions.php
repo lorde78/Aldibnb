@@ -47,11 +47,11 @@ require_once get_template_directory() . '/inc/post-filtre.php';
 // Pagination
 function MonTheme_paginate_links(){
 
-	echo'<nav class="paginate_container>';
+	echo'<nav class="paginate_container">';
 	echo'<ul>';
 	$pages = paginate_links(['type' => 'array']);
 	foreach ($pages as $page){
-		echo '<li class="paginate_number>';
+		echo '<li class="paginate_number">';
 		echo str_replace('page_numbers', 'page-link', $page);
 		echo '</li>';
 	}
