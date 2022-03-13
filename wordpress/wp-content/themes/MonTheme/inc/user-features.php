@@ -15,25 +15,26 @@ function remove_admin_bar()
 //Inscription
 
 $listeConnexion = add_action('admin_post_nopriv_inscription_form', function () {
-    $password = $_POST['password'];
-    $identifiant = $_POST['identifiant'];
-    $email = $_POST['email'];
+	$password = $_POST['password'];
+	$identifiant = $_POST['identifiant'];
+	$email = $_POST['email'];
 
-    $let = [$password, $identifiant, $email];
+	$let = [$password, $identifiant, $email];
 
-    var_dump($let);
-    $user_id = wp_insert_user(array(
-        'user_login' => $identifiant,
-        'user_pass' => $password,
-        'user_email' => $email,
-        'role' => 'editor'
-    ));
-    wp_redirect($_POST['_wp_http_referer'] . "?password" . $password . "?identifiant" . $identifiant . "?email" . $email);
+	var_dump($let);
+	$user_id = wp_insert_user(array(
+		'user_login' => $identifiant,
+		'user_pass' => $password,
+		'user_email' => $email,
+		'role' => 'editor'
+	));
+	wp_redirect($_POST['_wp_http_referer'] . "?password" . $password . "?identifiant" . $identifiant . "?email" . $email);
 });
 
 
 //Envoyer le formulaire 
 $listePublicationPost = add_action('admin_post_publier_form', function () {
+
     $titre = $_POST['Titre'];
     $contenu = $_POST['contenu'];
     $ville = $_POST['ville'];
@@ -62,6 +63,8 @@ $listePublicationPost = add_action('admin_post_publier_form', function () {
 
     wp_insert_post($post_args);
     wp_redirect(home_url());
+
+
 });
 
 
@@ -70,14 +73,15 @@ $listePublicationPost = add_action('admin_post_publier_form', function () {
  */
 
 add_action('init', function () {
-    $admin = get_role('administrator');
-    $admin->add_cap('manage_logements');
+	$admin = get_role('administrator');
+	$admin->add_cap('manage_logements');
 });
 
 
 /**
  * Ajout d'un nouveau rôle, quand on active le theme
  */
+
 
 add_action('init', function () {
     add_role('logements_manager', 'Logements Manager', [
@@ -88,6 +92,7 @@ add_action('init', function () {
         'manage_logements' => true,
         'manage_logements' => true,
     ]);
+
 });
 
 /**
@@ -95,9 +100,9 @@ add_action('init', function () {
  */
 
 add_action('switch_theme', function () {
-    $admin = get_role('administrator');
-    $admin->remove_cap('manage_logements');
-    remove_role('logements_manager');
+	$admin = get_role('administrator');
+	$admin->remove_cap('manage_logements');
+	remove_role('logements_manager');
 });
 
 

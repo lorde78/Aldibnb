@@ -11,194 +11,253 @@ Version: 1.0
 /* Global */
 
 * {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  color: #172b4d;
-  font-size: 1rem;
+	color: #172b4d;
+	font-size: 1rem;
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 1.175;
-  margin-bottom: 20px;
+	font-size: 2.5rem;
+	line-height: 1.175;
+	margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 1.875rem;
-  line-height: 1.23333;
+	font-size: 1.875rem;
+	line-height: 1.23333;
 }
 
-h3{
-  font-size: 1.4rem;
-  line-height: 1;
+h3 {
+	font-size: 1.4rem;
+	line-height: 1;
 }
 
-h3 a{
-  color: #172b4d;
+h3 a {
+	color: #172b4d;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 /* Header */
 
 .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f2f5f8;
-  height: 25vh;
-  padding: 0 80px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f2f5f8;
+	height: 25vh;
+	padding: 0 80px;
 }
 
 .header img {
-  width: 80px;
+	width: 80px;
 }
 
 .primary-menu a {
-  color: #172b4d;
-  font-weight: 600;
-  display: inline-block;
-  position: relative;
+	color: #172b4d;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
 }
 
 .primary-menu a:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #c51718;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: -5px;
+	left: 0;
+	background-color: #c51718;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
 }
 
 .primary-menu a:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
 
 .main-btn {
-  border: 3px solid #172b4d;
-  background-image: -webkit-linear-gradient(
-    30deg,
-    #172b4d 50%,
-    transparent 50%
-  );
-  background-image: linear-gradient(30deg, #172b4d 50%, transparent 50%);
-  background-size: 500px;
-  background-repeat: no-repeat;
-  background-position: 0%;
-  -webkit-transition: background 300ms ease-in-out;
-  transition: background 300ms ease-in-out;
-  padding: 10px 20px;
-  border-radius: 5%;
-  position: absolute;
-  display: block;
-  bottom: 20px;
-  right: 25px;
-  color: #fff;
-  font-weight: 600;
+	border: 3px solid #172b4d;
+	background-image: -webkit-linear-gradient(
+		30deg,
+		#172b4d 50%,
+		transparent 50%
+	);
+	background-image: linear-gradient(30deg, #172b4d 50%, transparent 50%);
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: 0%;
+	-webkit-transition: background 300ms ease-in-out;
+	transition: background 300ms ease-in-out;
+	padding: 10px 20px;
+	border-radius: 5%;
+	position: absolute;
+	display: block;
+	bottom: 20px;
+	right: 25px;
+	color: #fff;
+	font-weight: 600;
 }
-
 
 .main-btn:hover {
-  background-position: 100%;
-  color: #172b4d;
-}
-
-.main-btn {
-  color:fff;
+	background-position: 100%;
+	color: #172b4d;
 }
 
 .cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .post_container {
-  border: 2px black solid;
-  padding: 40px;
-  width: 250px;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-}
-
-.maSectionTypedeLogement {
-  margin: 0px;
+	border: 2px black solid;
+	padding: 40px;
+	width: 250px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
 }
 
 /* Annonce par logement */
 .postTypeParlogemet {
-  padding: 50px 20px;
+	padding: 50px 20px;
 }
 
 /* footer*/
 .site__footer {
-  height: 60px;
-  width: 100%;
-  background-color: #172b4d;
-}
-/*formulaire de recherche*/
-.searchFilter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	height: 25vh;
+	background-color: #172b4d;
 }
 
+/*formulaire de recherche*/
+
 .sectionTypeDeLogementsFrontPage {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .sectionTypeDeLogementsFrontPage .postTypeParlogemet {
-  border: 1px black solid;
+	order: 1px black solid;
 }
 
 /* Container */
 
 .container_villes,
 .container_types_logements {
-  display: block;
-  box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
-  border-radius: 5px;
-  height: 250px;
-  width: 350px;
-  position: relative;
+	display: block;
+	box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+	border-radius: 5px;
+	height: 250px;
+	width: 350px;
+	position: relative;
 }
 
 .section_cities,
 .section_types_logements {
-  display: flex;
-  flex-direction: column;
-  padding: 70px 80px 70px 80px;
+	display: flex;
+	flex-direction: column;
+	padding: 70px 80px 70px 80px;
 }
 
 .section_cities h2,
-.section_types_logements h2{
-  margin-bottom: 50px;
+.section_types_logements h2 {
+	margin-bottom: 50px;
 }
 
 .cards_cities,
 .cards_types_logements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+}
+
+/* page logement  */
+	/* search bar*/
+.search_container {
+	padding: 40px;
+	margin-top: 50px;
+	border-radius: 5px;
+	background: #5CB5A4;
+}
+
+.searchFilter{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 
-/* page logement  */
+	/* content */
+.catalogue_container {
+	gap: 50px;
+	justify-content: center;
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
 
+.post {
+	display: block;
+	border-radius: 5px;
+	width: 15%;
+	min-height: 250px;
+	position: relative;
+	padding: 25px;
+	border: 1px solid #eee;
+	transition: box-shadow .3s,transform .3s;
+}
+
+.post:hover{
+	box-shadow: 3px 3px 3px 0 rgba(0,0,0,.1);
+	transform: translate(0,-3px);
+}
+
+.post h2{
+	margin-bottom: 20px
+}
+
+.main {
+	margin: 0 80px;
+}
+
+.main > h1 {
+	justify-content: center;
+	display: flex;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.post_meta, .post_categories{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.post_meta .post_caracteristiques{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.post_categories span a{
+	color: #fff;
+	background-color:#F59C00;
+	padding: 5px;
+	border-radius: 5px;
+}
