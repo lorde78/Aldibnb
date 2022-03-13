@@ -13,14 +13,30 @@
             <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Logo">
         </a>
         
-        <?php 
-            wp_nav_menu( array( 
-                'theme_location' => 'main',
-                'container' => false, // afin d'éviter d'avoir une div autour 
-                'menu_class'     => 'primary-menu',
-                 )
-            );
-         ?>
+        <nav class="maNavbarHeader">
+
+            <?php
+            if (!is_user_logged_in()) {
+
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'main',
+                        'container' => false, // afin d'éviter d'avoir une div autour 
+                        'menu_class'     => 'menu-header',
+                    )
+                );
+            } else {
+
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'main_logged',
+                        'container' => false, // afin d'éviter d'avoir une div autour 
+                        'menu_class'     => 'menu-headerLogged',
+                    )
+                );
+            }
+            ?>
+        </nav>
 
         <?php get_search_form(); ?>
     </header>
