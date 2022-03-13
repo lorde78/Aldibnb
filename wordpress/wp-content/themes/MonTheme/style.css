@@ -188,10 +188,11 @@ ul {
 /* page logement  */
 	/* search bar*/
 .search_container {
-	padding: 40px;
+	padding: 50px;
 	margin-top: 50px;
 	border-radius: 5px;
 	background: #5CB5A4;
+	position: relative;
 }
 
 .searchFilter{
@@ -199,6 +200,73 @@ ul {
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+/* Filter */
+input {
+	all: unset;
+}
+
+.input-prix,
+.form-control,
+select{
+	background-color: #f2f5f8;
+	border-radius: 5px;
+	padding: 3px;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+select{
+	font-style: inherit;
+	font-weight: inherit;
+	font-size: 0.8rem;
+}
+
+.searchFilter label{
+	font-weight: 600;
+}
+
+.filter_prix,
+.filter_surface,
+.filter_capacity,
+.filter_cities,
+.filter_type{
+	display:flex;
+	flex-direction: row;
+	gap: 20px;
+	align-items: center;
+}
+
+ .filter-btn{
+	border: 3px solid #F59C00;
+	background-image: -webkit-linear-gradient(
+		30deg,
+		#F59C00 50%,
+		transparent 50%
+	);
+	background-image: linear-gradient(30deg, #F59C00 50%, transparent 50%);
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: 0%;
+	-webkit-transition: background 300ms ease-in-out;
+	transition: background 300ms ease-in-out;
+	padding: 10px 20px;
+	border-radius: 5%;
+	display: block;
+	color: #172b4d;
+	right:0;
+	position: absolute;
+	font-weight: 600;
+	bottom: -25px;
+	cursor: pointer;
+}
+
+.filter-btn:hover {
+	background-position: 100%;
+	color: #F59C00;
+	background-color: #fff;
+} 
 
 
 	/* content */
@@ -261,3 +329,4 @@ ul {
 	padding: 5px;
 	border-radius: 5px;
 }
+

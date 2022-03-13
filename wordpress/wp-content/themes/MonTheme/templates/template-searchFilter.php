@@ -26,24 +26,27 @@ foreach ($terms1 as $term) {
 			<input type="number" class="form-control" name="nombreDePersonne" id="inputnombreDePersonne">
 		</div>
 
-		<label for="ville-select">Choisir une ville:</label>
+		<div class="filter_cities">
+		<label for="ville-select">Choisir une ville</label>
 		<select name="ville" id="ville-select">
 			<option value="">--Choisir une ville--</option>
 			<?php foreach ($listeVille as $ville) : ?>
 				<option value="<?= $ville ?>"><?= $ville ?></option>
 			<?php endforeach; ?>
 		</select>
+		</div>
 
-		<label for="typeLogement-select">Choisir un type de logement:</label>
+		<div class="filter_type">
+		<label for="typeLogement-select">Choisir un type de logement</label>
 		<select name="typeLogement" id="typeLogement-select">
 			<option value="" selected="selected">--Choisir un type de logement--</option>
 			<?php foreach ($listeTypeLogement as $logement) : ?>
 				<option value="<?= $logement ?>"><?= $logement ?></option>
 			<?php endforeach; ?>
 		</select>
+		</div>
 
-
-		<input type="submit" class="submitButton" value="Filtrer">
+		<input type="submit" class="filter-btn" value="Filtrer">
 
 	</form>
 </div>
