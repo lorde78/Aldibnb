@@ -6,7 +6,7 @@
 // add_action('after_setup_theme', 'remove_admin_bar');
 // function remove_admin_bar()
 // {
-//     if (!is_admin()) {
+//     if (current_user_can('editor')) {
 //         show_admin_bar(false);
 //     }
 // }
@@ -14,11 +14,10 @@
 
 //Inscription
 
-$listeConnexion = add_action('admin_post_inscription_form', function () {
+$listeConnexion = add_action('admin_post_nopriv_inscription_form', function () {
     $password = $_POST['password'];
     $identifiant = $_POST['identifiant'];
     $email = $_POST['email'];
-    echo "yyyyyyyyyyyyyyyyyyyyyyy";
 
     $let = [$password, $identifiant, $email];
 
