@@ -83,27 +83,28 @@ add_action('init', function () {
  */
 
 
-add_action('init', function () {
-    add_role('logements_manager', 'Logements Manager', [
-        'manage_logements' => true,
-        'edit_genre' => true,
-        'delete_genre' => true,
-        'assign_genre' => true,
-        'manage_logements' => true,
-        'manage_logements' => true,
-    ]);
+// add_action('init', function () {
+//     add_role('logements_manager', 'Logements Manager', [
+//         'manage_logements' => true,
+//         'moderate_comments' => 1,
+//         'edit_genre' => true,
+//         'delete_genre' => true,
+//         'assign_genre' => true,
+//         'manage_logements' => true,
+//         'manage_logements' => true,
+//     ]);
 
-});
+// });
 
 /**
  * Suppresion d'un nouveau rôle, quand on switch de theme
  */
 
-add_action('switch_theme', function () {
-	$admin = get_role('administrator');
-	$admin->remove_cap('manage_logements');
-	remove_role('logements_manager');
-});
+// add_action('switch_theme', function () {
+// 	$admin = get_role('administrator');
+// 	$admin->remove_cap('manage_logements');
+// 	remove_role('logements_manager');
+// });
 
 
 
