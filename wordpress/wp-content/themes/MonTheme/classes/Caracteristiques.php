@@ -1,7 +1,6 @@
 <?php
 class Caracteristiques{
 
-    const META_KEY = 'MonTheme_caracteristiques';
     private $description;
     private $prix;
     private $surface;

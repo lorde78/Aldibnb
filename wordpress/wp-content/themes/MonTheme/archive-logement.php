@@ -15,6 +15,7 @@ Template Name: Page Archives Catalogue
             endwhile;
             MonTheme_paginate_links();
         endif; ?>
+         <?php wp_reset_postdata(); ?>
     </main>
     
     <aside class="site__sidebar">

@@ -59,3 +59,10 @@ function MonTheme_paginate_links(){
     echo '</nav>';
     
 }
+
+
+
+//Redirection après le logout
+if ( !is_user_logged_in() && (home_url($_SERVER['REQUEST_URI']) == "http://localhost:5555/wp-login.php?loggedout=true&wp_lang=fr_FR") ) {
+    wp_redirect(home_url());
+}

@@ -24,13 +24,14 @@ function MonTheme_register_post_types()
             'edit_post'      => "manage_logements",
             'read_post'      => "manage_logements",
             'read_private_posts'      => "manage_logements",
-            'edit_others_posts'      => "manage_logements",
+            'edit_others_postS'      => "manage_logements",
             'delete_published_posts'      => "manage_logements",
             'delete_post'        => "manage_logements",
             'edit_posts'         => "manage_logements",
             'publish_posts'      => "manage_logements",
             'read'                   => "manage_logements",
             'delete_posts'           => "manage_logements",
+            'publish_post' => 'manage_logements',
         ),
     );
     register_post_type('Logement', $args);
@@ -45,6 +46,13 @@ function MonTheme_register_post_types()
         'public' => true,
         'show_in_rest' => true,
         'hierarchical' => true,
+        'capabilities' => array(
+            'manage_terms' => 'manage_logements',
+            'edit_terms' => 'manage_logements',
+            'delete_terms' => 'manage_logements',
+            'assign_terms' => 'manage_logements',
+
+        )
     );
     register_taxonomy('type-Logement', 'logement', $args);
     // Déclaration de la Taxonomie Localisation
@@ -58,6 +66,13 @@ function MonTheme_register_post_types()
         'public' => true,
         'show_in_rest' => true,
         'hierarchical' => true,
+        'capabilities' => array(
+            'manage_terms' => 'manage_logements',
+            'edit_terms' => 'manage_logements',
+            'delete_terms' => 'manage_logements',
+            'assign_terms' => 'manage_logements',
+
+        )
     );
     register_taxonomy('localisation', 'logement', $args);
 }

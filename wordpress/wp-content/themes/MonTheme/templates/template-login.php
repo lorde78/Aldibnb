@@ -2,9 +2,12 @@
 /*
 Template Name: Page de connexion
 */
+
+get_header();
 ?>
 
 <?php
+//Formulaire de connexion
 if (is_user_logged_in()) {
     wp_redirect(home_url());
     exit;
@@ -27,4 +30,5 @@ if (is_user_logged_in()) {
         <input type="hidden" name="redirect_to" value="<?= home_url(); ?>">
 
     </form>
-<?php  } ?>
+<?php  }
+    get_footer() ?>
