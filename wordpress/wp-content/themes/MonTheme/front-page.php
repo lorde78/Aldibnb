@@ -30,9 +30,9 @@ $query_bordeaux = displayPostPerCategory('localisation', "Bordeaux");
 $arrayPostPerCategoryType = [$query_loft, $query_appartement, $query_villa];
 $arrayPostPerCity = [$query_paris, $query_lille, $query_dijon, $query_bordeaux];
 ?>
-<div>
-    <span>Nos villes</span> <!-- Récuperer le nom de la taxonomie que l'on veut récuperer -->
-    <div class="section_content">
+<section class="section_cities">
+    <h2>Nos villes</h2>
+    <div class="cards_cities">
     <?php
     for ($i = 0; $i <= count($arrayPostPerCity) - 1; $i++) {
         if ($arrayPostPerCity[$i]->have_posts()) :
@@ -40,15 +40,14 @@ $arrayPostPerCity = [$query_paris, $query_lille, $query_dijon, $query_bordeaux];
                 <?php get_template_part('partials/post-ville'); ?>
     <?php endwhile;
         endif;
-
         wp_reset_postdata();
     } ?>
     </div>
-</div>
+</section>
 
-<section class="sectionTypeDeLogements">
-    <h1>Types de logements</h1>
-    <div class="sectionTypeDeLogementsFrontPage">
+<section class="section_types_logements">
+    <h2>Types de logements</h2>
+    <div class="cards_types_logements">
     <?php
     for ($i = 0; $i <= count($arrayPostPerCategoryType) - 1; $i++) {
         if ($arrayPostPerCategoryType[$i]->have_posts()) :

@@ -21,7 +21,7 @@ function MonTheme_register_assets() {
         true
     );
     
-    // Déclarer style.css à la racine du thème
+    // Déclarer le fichier style.css et importer les fichiers.css du dossier css
     wp_enqueue_style( 
         'MonTheme',
         get_stylesheet_uri(), 
