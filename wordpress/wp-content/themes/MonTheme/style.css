@@ -6,6 +6,8 @@ Requires at least: WordPress 5.0
 Version: 1.0
 */
 
+@import url(css/front-page.css);
+
 /* Global */
 
 * {
@@ -30,6 +32,15 @@ h1 {
 h2 {
   font-size: 1.875rem;
   line-height: 1.23333;
+}
+
+h3{
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+h3 a{
+  color: #172b4d;
 }
 
 ul {
@@ -67,7 +78,7 @@ ul {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #C51718;
+  background-color: #c51718;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -77,43 +88,60 @@ ul {
   transform-origin: bottom left;
 }
 
-
-.main-btn{
+.main-btn {
   border: 3px solid #172b4d;
-  background-image: -webkit-linear-gradient(30deg, #172b4d 50%, transparent 50%);
+  background-image: -webkit-linear-gradient(
+    30deg,
+    #172b4d 50%,
+    transparent 50%
+  );
   background-image: linear-gradient(30deg, #172b4d 50%, transparent 50%);
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: 0%;
   -webkit-transition: background 300ms ease-in-out;
-  transition: background 300ms ease-in-out; 
+  transition: background 300ms ease-in-out;
   padding: 10px 20px;
   border-radius: 5%;
+  position: absolute;
+  display: block;
+  bottom: 20px;
+  right: 25px;
+  color: #fff;
+  font-weight: 600;
 }
 
-.main-btn:hover{
+
+.main-btn:hover {
   background-position: 100%;
   color: #172b4d;
 }
 
-.section_content{
-  display:flex;
+.main-btn {
+  color:fff;
+}
+
+.cards {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.post_container{
+.post_container {
   border: 2px black solid;
   padding: 40px;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .maSectionTypedeLogement {
   margin: 0px;
 }
 
 /* Annonce par logement */
-.postTypeParlogemet{
+.postTypeParlogemet {
   padding: 50px 20px;
 }
 
@@ -128,24 +156,49 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
-/*.typeDeLogementsFrontPage {
-  
-
-}*/
 .sectionTypeDeLogementsFrontPage {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .sectionTypeDeLogementsFrontPage .postTypeParlogemet {
   border: 1px black solid;
 }
 
+/* Container */
+
+.container_villes,
+.container_types_logements {
+  display: block;
+  box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  border-radius: 5px;
+  height: 250px;
+  width: 350px;
+  position: relative;
+}
+
+.section_cities,
+.section_types_logements {
+  display: flex;
+  flex-direction: column;
+  padding: 70px 80px 70px 80px;
+}
+
+.section_cities h2,
+.section_types_logements h2{
+  margin-bottom: 50px;
+}
+
+.cards_cities,
+.cards_types_logements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
 
 
+/* page logement  */
 

@@ -12,9 +12,6 @@ require_once get_template_directory() . '/inc/features.php';
 // Fonctionnalités user
 require_once get_template_directory() . '/inc/user-features.php';
 
-// Load style.css	
-wp_enqueue_style( 'style', get_stylesheet_uri() );
-
 register_nav_menus(array(
     'main' => 'Menu Principal',
     'footer' => 'Bas de page',
@@ -28,6 +25,7 @@ register_sidebar(array(
     'before_title' => '<p class="site__sidebar__widget__title">',
     'after_title' => '</p>',
 ));
+
 
 
 /*
