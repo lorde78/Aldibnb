@@ -19,6 +19,7 @@ function MonTheme_register_post_types()
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail', 'comments'),
         'menu_position' => 5,
+        'show_in_menu'  => true,
         'menu_icon' => 'dashicons-admin-customizer',
         'capabilities' => array(
             'edit_post'      => "manage_logements",
@@ -44,6 +45,7 @@ function MonTheme_register_post_types()
         'labels' => $labels,
         'public' => true,
         'show_in_rest' => true,
+        'show_in_nav_menus'          => true,
         'hierarchical' => true,
     );
     register_taxonomy('type-Logement', 'logement', $args);

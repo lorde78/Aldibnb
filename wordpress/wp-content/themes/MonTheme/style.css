@@ -144,8 +144,11 @@ ul {
 
 .sectionTypeDeLogementsFrontPage .postTypeParlogemet {
   border: 1px black solid;
+  background-color: #C51718;
 }
 
 
-
+.maNavbarHeader .menu-headerLogged {
+  display: flex;
+}
 

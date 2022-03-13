@@ -8,7 +8,6 @@ function MonTheme_remove_menu_pages()
 add_action('admin_menu', 'MonTheme_remove_menu_pages');
 
 //images 
-
 add_theme_support('post-thumbnails');
 
 // Définir la taille des images mises en avant
