@@ -47,10 +47,6 @@ require_once get_template_directory() . '/inc/post-filtre.php';
 // Pagination
 function MonTheme_paginate_links(){
 
-//Redirection après le logout
-if ( !is_user_logged_in() && (home_url($_SERVER['REQUEST_URI']) == "http://localhost:5555/wp-login.php?loggedout=true&wp_lang=fr_FR") ) {
-    wp_redirect(home_url());
-
 	echo'<nav class="paginate_container>';
 	echo'<ul>';
 	$pages = paginate_links(['type' => 'array']);
@@ -61,6 +57,9 @@ if ( !is_user_logged_in() && (home_url($_SERVER['REQUEST_URI']) == "http://local
 	}
 	echo '</ul>';
 	echo '</nav>';
-	
+}
 
+//Redirection après le logout
+if ( !is_user_logged_in() && (home_url($_SERVER['REQUEST_URI']) == "http://localhost:5555/wp-login.php?loggedout=true&wp_lang=fr_FR") ) {
+    wp_redirect(home_url());
 }
