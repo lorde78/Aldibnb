@@ -3,13 +3,13 @@
 
 //voir apres avec l'ajout personalisé du rôle custom post 
 
-add_action('after_setup_theme', 'remove_admin_bar');
-function remove_admin_bar()
-{
-    if (!is_admin()) {
-        show_admin_bar(false);
-    }
-}
+// add_action('after_setup_theme', 'remove_admin_bar');
+// function remove_admin_bar()
+// {
+//     if (!is_admin()) {
+//         show_admin_bar(false);
+//     }
+// }
 
 
 //Inscription
@@ -20,7 +20,6 @@ $listeConnexion = add_action('admin_post_inscription_form', function () {
     $email = $_POST['email'];
     echo "yyyyyyyyyyyyyyyyyyyyyyy";
 
-    wp_redirect($_POST['_wp_http_referer'] . "?password" . $password . "?identifiant" . $identifiant . "?email" . $email);
     $let = [$password, $identifiant, $email];
 
     var_dump($let);
@@ -28,8 +27,9 @@ $listeConnexion = add_action('admin_post_inscription_form', function () {
         'user_login' => $identifiant,
         'user_pass' => $password,
         'user_email' => $email,
-        'role' => 'subscriber'
+        'role' => 'editor'
     ));
+    wp_redirect($_POST['_wp_http_referer'] . "?password" . $password . "?identifiant" . $identifiant . "?email" . $email);
 });
 
 

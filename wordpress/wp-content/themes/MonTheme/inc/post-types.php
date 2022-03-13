@@ -17,7 +17,7 @@ function MonTheme_register_post_types()
         'public' => true,
         'show_in_rest' => true,
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail'),
+        'supports' => array('title', 'editor', 'thumbnail', 'comments'),
         'menu_position' => 5,
         'menu_icon' => 'dashicons-admin-customizer',
         'capabilities' => array(
