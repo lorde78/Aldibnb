@@ -7,6 +7,12 @@ Template Name: Page Archives Catalogue
 <?php get_header(); ?>
 <section class="main">
 	<?php get_template_part('templates/template-searchFilter') ?>
+	<?php if (!is_front_page() && !is_single()) : ?>
+                <form action="<?php esc_url(home_url('/')); ?>">
+                    <input type="search" placeholder="Rechercher" aria-label="Rechercher" name="s" value="<?= get_search_query(); ?>">
+                    <button class="submitSearch" type="submit">Rechercher</button>
+                </form>
+            <?php endif; ?>
 	<h1>Le Catalogue de logements</h1>
 	<section class="catalogue">
 		<main class="catalogue_container">

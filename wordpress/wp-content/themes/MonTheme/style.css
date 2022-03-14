@@ -55,7 +55,7 @@ ul {
 	align-items: center;
 	justify-content: space-between;
 	background-color: #f2f5f8;
-	height: 25vh;
+	height: 200px;
 	padding: 0 80px;
 }
 
@@ -175,7 +175,7 @@ ul {
 /* footer*/
 
 .site_footer {
-	height: 25vh;
+	height: 200px;
 	background-color: #172b4d;
 	display: flex;
 	padding: 20px;
@@ -219,9 +219,17 @@ ul {
 	padding: 70px 80px 70px 80px;
 }
 
+.section_types_logements h2{
+	width: 25% !important;
+}	
+
 .section_cities h2,
 .section_types_logements h2 {
 	margin-bottom: 50px;
+	background-color: orange;
+    width: 15%;
+    padding: 0px 10px 0px;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .cards_cities,
@@ -304,9 +312,9 @@ select {
 	color: #fff;
 	position: absolute;
 	font-weight: 600;
-	bottom: 50px;
+	bottom: 10px;
 	cursor: pointer;
-	right: 70px;
+	right: 10px;
 }
 
 .filter-btn:hover {
@@ -439,13 +447,11 @@ select {
 	border-radius: 3px;
 }
 
-
-
 /* Page Inscription */
 .container-inscription {
     display:flex;
     flex-direction: row;
-	height: 541px;
+	  height: 541px;
 }
 
 .textContainerInscription {
@@ -457,7 +463,8 @@ select {
 }
 .container-inscription .sideLeft {
 	position: relative;
-    width: 60%;
+	width: 60%;
+
 	height: 500px;
 }
 
@@ -499,6 +506,7 @@ select {
 	width: 400px;
 	padding: 1em;
 	height: 350px;
+
   }
   .container-inscription .sideRight form input {
 	  border: 1px solid black;
@@ -530,15 +538,14 @@ select {
 	bottom: -25px;
 	cursor: pointer;
 	border: 0;
-  }
+}
 
-
-  .submitButton:hover {
+.submitButton:hover {
 	background-position: 100%;
-	color: #F59C00;
+	color: #f59c00;
 	background-color: #fff;
-  }
-  
+}
+
 .page-numbers {
 	color: #00b6ed;
 }
@@ -608,13 +615,142 @@ svg:hover {
 	fill: #a1a8b1;
 }
 
-
-
 /*Single post render*/
 
 .post-single-post {
-	background-color: red;
+	display: flex;
+	padding: 80px 80px 0px 80px;
+}
 
+.post-single-post-img {
+	width: 50%;
+}
+
+.post-single-post-img img {
+	width: 400px;
+}
+
+.post-single-post-content {
+	width: 50%;
+	display: flex;
+	padding: 50px;
+	flex-direction: column;
+}
+
+.post-single-post-content h2 {
+	margin-bottom: 50px;
+	justify-content: center;
+	display: flex;
+}
+
+.post-single-post-content .post_meta {
+	display: flex;
+	gap: 30px;
+}
+
+.post-single-post-content .post_categories {
+	display: flex;
+	gap: 30px;
+	flex-direction: row;
+}
+
+.post-single-post-content .post_categories span {
+	font-size: 20px;
+}
+
+.post-single-post-content .post_caracteristiques {
+	display: flex;
+	gap: 30px;
+}
+
+.post-single-post-content .post_caracteristiques span {
+	font-size: 20px;
+}
+
+.post-single-post-content .post_caracteristiques_description {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.comment_container .comments {
+	display: none;
+}
+
+.nondisplay {
+	display: none;
+}
+
+.comments {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.formComments {
+	margin-right: 100px;
+}
+
+.submit {
+	border: 3px solid #c51718;
+	background-image: -webkit-linear-gradient(
+		30deg,
+		#c51718 50%,
+		transparent 50%
+	);
+	background-image: linear-gradient(30deg, #c51718 50%, transparent 50%);
+	background-size: 530px;
+	background-repeat: no-repeat;
+	background-position: 0%;
+	-webkit-transition: background 300ms ease-in-out;
+	transition: background 300ms ease-in-out, color 300ms ease-in-out;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: block;
+	color: #fff;
+	font-weight: 600;
+	bottom: 0;
+	cursor: pointer;
+}
+
+.submit:hover {
+	background-position: 105%;
+	color: #00b6ed;
+	background-color: #fff;
+}
+
+.comment-form-comment {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.logged-in-as {
+	position: relative;
+	bottom: -189px;
+	font-size: 13px;
+}
+
+/* annonceSimilaire */
+
+.annonceSimilaire{
+	display:flex;
+	flex-direction: column;
+	margin: 0 80px;
+}
+
+.post_similaire_container{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 50px;
+	margin-bottom: 50px;
+}
+
+.annonceSimilaire h2{
+	margin-bottom: 20px;
+	align-self: center;
 }
 
 /*Connexion */
@@ -627,7 +763,7 @@ svg:hover {
 	z-index: 3;
   }
 
-.form-control-checkbox {
+.container-connexion .form-control-checkbox {
 	padding: 10px;
 }
 
@@ -644,7 +780,7 @@ svg:hover {
 .container-connexion {
     display:flex;
     flex-direction: row;
-	height: 541px;
+	  height: 541px;
 }
 
 .textContainerConnexion {
@@ -697,14 +833,17 @@ svg:hover {
 	width: 400px;
 	padding: 1em;
 	height: 350px;
-  }
-  .container-connexion .sideRight form input {
+ }
+
+ .container-connexion .sideRight form input {
 	  border: 1px solid black;
 	  padding: 10px ;
-  }
-  .container-connexion .sideRight form input:focus {
+ }
+
+ .container-connexion .sideRight form input:focus {
 	  background-color: #172b4d;
 	  opacity: 0.6;
 	  color: white;
 	  font-weight: 600;
   }
+
