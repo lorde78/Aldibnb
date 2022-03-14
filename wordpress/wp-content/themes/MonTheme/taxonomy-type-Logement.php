@@ -2,7 +2,7 @@
     <?php get_template_part('templates/template-searchFilter') ?>
 <section class="maSectionTypedeLogement">
     <?php if (have_posts()) : while (have_posts()) : the_post();
-            get_template_part('partials/post-type');
+            get_template_part('partials/post-render');
         endwhile;
     endif; ?>
     <?php wp_reset_postdata(); ?>

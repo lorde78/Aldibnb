@@ -847,3 +847,9 @@ svg:hover {
 	  font-weight: 600;
   }
 
+
+  .site__logements .site__content {
+	display: flex;
+	gap: 50px;
+	flex-wrap: wrap;
+  }
