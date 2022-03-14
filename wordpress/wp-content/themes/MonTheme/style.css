@@ -843,6 +843,11 @@ svg:hover {
 	  font-weight: 600;
   }
 
+  .site__logements .site__content {
+	display: flex;
+	gap: 50px;
+	flex-wrap: wrap;
+  }
   .comment{
 	  margin-bottom:20px;
   }
@@ -871,4 +876,3 @@ svg:hover {
 	margin-top:10px;
 	margin-bottom: 20px;
   }
-
