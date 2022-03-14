@@ -37,17 +37,15 @@
                 );
             }
             ?>
-            <?php if (!is_front_page() && !is_single()) : ?>
-                <form action="<?php esc_url(home_url('/')); ?>">
-                    <input type="search" placeholder="Rechercher" aria-label="Rechercher" name="s" value="<?= get_search_query(); ?>">
-                    <button class="submitSearch" type="submit">Rechercher</button>
-                </form>
-            <?php endif; ?>
+            
         </nav>
+        <div class="user">
             <?php
             if (current_user_can('editor') || current_user_can('administrator') ): ?>
                 <p>Bienvenue  <strong><?global $current_user; wp_get_current_user(); echo $current_user->user_login ?> </strong></p>
             <?php endif;?>
+            </div>
     </header>
 
     <?php wp_body_open(); ?>
+
