@@ -41,7 +41,7 @@
         </nav>
         <div class="user">
             <?php
-            if (current_user_can('editor') || current_user_can('administrator') ): ?>
+            if (current_user_can('editor') || current_user_can('administrator') || current_user_can('logements_manager') ): ?>
                 <p>Bienvenue  <strong><?global $current_user; wp_get_current_user(); echo $current_user->user_login ?> </strong></p>
             <?php endif;?>
             </div>
