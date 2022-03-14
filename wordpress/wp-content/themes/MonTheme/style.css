@@ -586,3 +586,11 @@ svg:hover {
 	fill: #a1a8b1;
 }
 
+
+
+/*Single post render*/
+
+.post-single-post {
+	background-color: red;
+
+}
