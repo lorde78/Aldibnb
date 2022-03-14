@@ -219,17 +219,17 @@ ul {
 	padding: 70px 80px 70px 80px;
 }
 
-.section_types_logements h2{
+.section_types_logements h2 {
 	width: 25% !important;
-}	
+}
 
 .section_cities h2,
 .section_types_logements h2 {
 	margin-bottom: 50px;
 	background-color: orange;
-    width: 15%;
-    padding: 0px 10px 0px;
-    border-radius: 0px 20px 20px 0px;
+	width: 15%;
+	padding: 0px 10px 0px;
+	border-radius: 0px 20px 20px 0px;
 }
 
 .cards_cities,
@@ -449,13 +449,13 @@ select {
 
 /* Page Inscription */
 .container-inscription {
-    display:flex;
-    flex-direction: row;
-	  height: 541px;
+	display: flex;
+	flex-direction: row;
+	height: 541px;
 }
 
 .textContainerInscription {
-	position:absolute;
+	position: absolute;
 	top: 50%;
 	left: 10%;
 	color: white;
@@ -464,7 +464,6 @@ select {
 .container-inscription .sideLeft {
 	position: relative;
 	width: 60%;
-
 	height: 500px;
 }
 
@@ -482,17 +481,107 @@ select {
 	width: 100%;
 }
 
+/* formulaire d'ajout de logement */
+
+.container-add {
+	display: flex;
+	flex-direction: row;
+	height: 541px;
+}
+
+.container-add .row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: inherit;
+	gap: 0px;
+	margin-bottom: 20px;
+}
+
+.row .inutile {
+	display: none;
+}
+
+select#ville-select {
+	margin-right:20px;
+}
+
+.row.description {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.row.description input {
+	width: 100%;
+}
+
+input#myImageUpload.upload {
+	border: none;
+	padding: 0px;
+	background-color: #fff;
+}
+
+.container-add .sideLeft {
+	position: relative;
+	width: 60%;
+	height: 500px;
+}
+
+.container-add .sideLeft .img_container {
+	object-fit: fill;
+}
+
+.container-add .sideRight {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 40%;
+}
+
+.container-add .titrePageInscription {
+	text-align: center;
+}
+
+.container-add .sideRight form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 10px 15px;
+	padding: 1em;
+	height: 350px;
+}
+.container-add .sideRight form input {
+	border: 1px solid black;
+	padding: 15px 0px;
+	margin-right: 10px;
+}
+.container-add .sideRight form input:focus {
+	background-color: #172b4d;
+	opacity: 0.6;
+	color: white;
+	font-weight: 600;
+}
+
+.submitButton.add {
+	width: 20%;
+	text-align: center;
+	position: relative;
+}
 
 /* Formulaire Inscription */
 .container-inscription .sideRight {
 	padding-top: 50px;
 	padding-bottom: 50px;
+	width: 40%;
+}
 
+.row {
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }
 
 .titrePageInscription {
 	text-align: center;
-
 }
 
 .container-inscription .sideRight form {
@@ -503,23 +592,26 @@ select {
 	width: 400px;
 	padding: 1em;
 	height: 350px;
+}
+.container-inscription .sideRight form input {
+	border: 1px solid black;
+	padding: 15px 0px;
+}
+.container-inscription .sideRight form input:focus {
+	background-color: #172b4d;
+	opacity: 0.6;
+	color: white;
+	font-weight: 600;
+}
 
-  }
-  .container-inscription .sideRight form input {
-	  border: 1px solid black;
-	  padding: 15px 0px;
-  }
-  .container-inscription .sideRight form input:focus {
-	  background-color: #172b4d;
-	  opacity: 0.6;
-	  color: white;
-	  font-weight: 600;
-  }
-
-  .submitButton {
-	border: 3px solid #F59C00;
-	background-image: -webkit-linear-gradient( 30deg, #F59C00 50%, transparent 50% );
-	background-image: linear-gradient(30deg, #F59C00 50%, transparent 50%);
+.submitButton {
+	border: 3px solid #f59c00;
+	background-image: -webkit-linear-gradient(
+		30deg,
+		#f59c00 50%,
+		transparent 50%
+	);
+	background-image: linear-gradient(30deg, #f59c00 50%, transparent 50%);
 	background-size: 500px;
 	background-repeat: no-repeat;
 	background-position: 0%;
@@ -731,21 +823,21 @@ svg:hover {
 
 /* annonceSimilaire */
 
-.annonceSimilaire{
-	display:flex;
+.annonceSimilaire {
+	display: flex;
 	flex-direction: column;
 	margin: 0 80px;
 }
 
-.post_similaire_container{
-	display:flex;
+.post_similaire_container {
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 50px;
 	margin-bottom: 50px;
 }
 
-.annonceSimilaire h2{
+.annonceSimilaire h2 {
 	margin-bottom: 20px;
 	align-self: center;
 }
@@ -758,12 +850,11 @@ svg:hover {
 	left: 25%;
 	color: white;
 	z-index: 3;
-  }
+}
 
 .container-connexion .form-control-checkbox {
 	padding: 10px;
 }
-
 
 .checkboxLogin {
 	display: flex;
@@ -775,13 +866,13 @@ svg:hover {
 }
 
 .container-connexion {
-    display:flex;
-    flex-direction: row;
-	  height: 541px;
+	display: flex;
+	flex-direction: row;
+	height: 541px;
 }
 
 .textContainerConnexion {
-	position:absolute;
+	position: absolute;
 	top: 50%;
 	left: 25%;
 	color: white;
@@ -790,7 +881,7 @@ svg:hover {
 
 .container-connexion .sideLeft {
 	position: relative;
-    width: 60%;
+	width: 60%;
 	height: 500px;
 }
 
@@ -808,13 +899,10 @@ svg:hover {
 	width: 100%;
 }
 
-
 /* Formulaire connexion */
 .container-connexion .sideRight {
-	
 	padding-top: 50px;
 	padding-bottom: 50px;
-
 }
 
 .titrePageConnexion {
@@ -829,70 +917,74 @@ svg:hover {
 	width: 400px;
 	padding: 1em;
 	height: 350px;
- }
+}
 
- .container-connexion .sideRight form input {
-	  border: 1px solid black;
-	  padding: 10px ;
- }
+.container-connexion .sideRight form input {
+	border: 1px solid black;
+	padding: 10px;
+}
 
- .container-connexion .sideRight form input:focus {
-	  background-color: #172b4d;
-	  opacity: 0.6;
-	  color: white;
-	  font-weight: 600;
-  }
+.container-connexion .sideRight form input:focus {
+	background-color: #172b4d;
+	opacity: 0.6;
+	color: white;
+	font-weight: 600;
+}
 
-  .site__logements .site__content {
+.site__logements .site__content {
 	display: flex;
 	gap: 50px;
 	flex-wrap: wrap;
-  }
-  .comment{
-	  margin-bottom:20px;
-  }
-
-  .comment-author{
-	display: flex;
-    align-items: center;
-    gap: 10px;
-	background-color: #f59c00;
-    width: 35%;
-  }
-
-  .comment-meta a{
-	  color:#172b4d;
-	  pointer-events: none;
-	  font-size: 13px;
-	  font-weight: 500;
-	  margin-bottom: 15px;
-  }
-
-  .fn{
-	  color:#c51718;
-  }
-
-  .comment p{
-	margin-top:10px;
+}
+.comment {
 	margin-bottom: 20px;
-  }
+}
 
-  .archive .search_container{
+.comment-author {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: #f59c00;
+	width: 35%;
+}
+
+.comment-meta a {
+	color: #172b4d;
+	pointer-events: none;
+	font-size: 13px;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.fn {
+	color: #c51718;
+}
+
+.comment p {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.archive .search_container {
 	margin-left: 80px;
-    margin-right: 80px;
+	margin-right: 80px;
 	margin-bottom: 50px;
-  }
+}
 
-  .maSectionTypedeLogement{
+.maSectionTypedeLogement {
 	margin-left: 80px;
-    margin-right: 80px;
-	display:flex;
+	margin-right: 80px;
+	display: flex;
 	flex-wrap: wrap;
 	gap: 50px;
 	margin-bottom: 50px;
-  }
+}
 
-  h2.titre_typedelogement{
+h2.titre_typedelogement {
 	text-align: center;
-    margin-bottom: 30px;
-  }
+	margin-bottom: 30px;
+}
+
+.add_logement h1 {
+	text-align: center;
+}
