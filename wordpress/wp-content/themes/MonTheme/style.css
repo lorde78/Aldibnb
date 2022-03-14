@@ -876,3 +876,23 @@ svg:hover {
 	margin-top:10px;
 	margin-bottom: 20px;
   }
+
+  .archive .search_container{
+	margin-left: 80px;
+    margin-right: 80px;
+	margin-bottom: 50px;
+  }
+
+  .maSectionTypedeLogement{
+	margin-left: 80px;
+    margin-right: 80px;
+	display:flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	margin-bottom: 50px;
+  }
+
+  h2.titre_typedelogement{
+	text-align: center;
+    margin-bottom: 30px;
+  }
