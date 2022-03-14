@@ -439,6 +439,84 @@ select {
 	border-radius: 3px;
 }
 
+
+
+/* Page Inscription */
+.container-inscription {
+    display:flex;
+    flex-direction: row;
+}
+
+.container-inscription .sideLeft {
+	position: relative;
+    background-color: #5CB5A4;
+    width: 60%;
+	height: 500px;
+}
+
+.container-inscription .sideLeft .img_container {
+	object-fit: fill;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	background-color: black;
+	opacity: 0.4;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+}
+
+.overlay:hover {
+	opacity: 0.8;
+}
+/* Formulaire Inscription */
+.container-inscription {
+	background-color: #f2f5f8;
+}
+
+.container-inscription .sideRight form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 50px auto;
+	width: 400px;
+	padding: 1em;
+	height: 350px;
+  }
+  .container-inscription .sideRight form input {
+	  border: 1px solid black;
+  }
+
+  .submitButton {
+	border: 3px solid #F59C00;
+	background-image: -webkit-linear-gradient( 30deg, #F59C00 50%, transparent 50% );
+	background-image: linear-gradient(30deg, #F59C00 50%, transparent 50%);
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: 0%;
+	-webkit-transition: background 300ms ease-in-out;
+	transition: background 300ms ease-in-out;
+	padding: 10px 20px;
+	border-radius: 5%;
+	display: block;
+	color: #172b4d;
+	right: 0;
+	position: absolute;
+	font-weight: 600;
+	bottom: -25px;
+	cursor: pointer;
+	border: 0;
+  }
+
+
+  .submitButton:hover {
+	background-position: 100%;
+	color: #F59C00;
+	background-color: #fff;
+  }
+  
 .page-numbers {
 	color: #00b6ed;
 }
@@ -507,3 +585,4 @@ svg {
 svg:hover {
 	fill: #a1a8b1;
 }
+

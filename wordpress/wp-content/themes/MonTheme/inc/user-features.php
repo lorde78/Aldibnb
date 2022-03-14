@@ -28,7 +28,10 @@ $listeConnexion = add_action('admin_post_nopriv_inscription_form', function () {
 		'user_email' => $email,
 		'role' => 'editor'
 	));
-	wp_redirect($_POST['_wp_http_referer'] . "?password" . $password . "?identifiant" . $identifiant . "?email" . $email);
+
+    //faire redirection
+    wp_redirect(home_url());
+
 });
 
 
