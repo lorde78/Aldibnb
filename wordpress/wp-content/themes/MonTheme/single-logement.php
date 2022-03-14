@@ -58,27 +58,10 @@ $query = new WP_Query([
     <div class="post_similaire_container">
       <?php
       while ($query->have_posts()) : $query->the_post();
-      ?>
-        <article class="post">
-          <?php the_post_thumbnail(); ?>
-
-          <h1><?php the_title(); ?></h1>
-          <?php the_permalink() ?>
-
-          <div class="post__meta">
-            <p>
-              Publié le <?php the_date(); ?>
-              par <?php the_author(); ?>
-              Dans la catégorie <?php the_category(); ?>
-              Avec les étiquettes <?php the_tags(); ?>
-            </p>
-            <?php the_terms(get_the_ID(), 'type-Logement'); ?>
-          </div>
-
-          <div class="post__content">
-            <?php the_content(); ?>
-          </div>
-        </article>
+      
+        get_template_part('partials/post-render');
+        
+    ?>
     <?php endwhile;
     endif;
     wp_reset_postdata(); ?>
