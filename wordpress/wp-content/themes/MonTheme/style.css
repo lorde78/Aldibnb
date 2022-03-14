@@ -484,10 +484,7 @@ select {
 
 
 /* Formulaire Inscription */
-.container-inscription {
-}
 .container-inscription .sideRight {
-	
 	padding-top: 50px;
 	padding-bottom: 50px;
 
@@ -822,7 +819,6 @@ svg:hover {
 
 .titrePageConnexion {
 	text-align: center;
-
 }
 
 .container-connexion .sideRight form {
@@ -845,5 +841,34 @@ svg:hover {
 	  opacity: 0.6;
 	  color: white;
 	  font-weight: 600;
+  }
+
+  .comment{
+	  margin-bottom:20px;
+  }
+
+  .comment-author{
+	display: flex;
+    align-items: center;
+    gap: 10px;
+	background-color: #f59c00;
+    width: 35%;
+  }
+
+  .comment-meta a{
+	  color:#172b4d;
+	  pointer-events: none;
+	  font-size: 13px;
+	  font-weight: 500;
+	  margin-bottom: 15px;
+  }
+
+  .fn{
+	  color:#c51718;
+  }
+
+  .comment p{
+	margin-top:10px;
+	margin-bottom: 20px;
   }
 
