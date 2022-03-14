@@ -445,11 +445,18 @@ select {
 .container-inscription {
     display:flex;
     flex-direction: row;
+	height: 541px;
 }
 
+.textContainerInscription {
+	position:absolute;
+	top: 50%;
+	left: 10%;
+	color: white;
+	z-index: 3;
+}
 .container-inscription .sideLeft {
 	position: relative;
-    background-color: #5CB5A4;
     width: 60%;
 	height: 500px;
 }
@@ -462,31 +469,46 @@ select {
 	position: absolute;
 	top: 0;
 	background-color: black;
-	opacity: 0.4;
+	opacity: 0.3;
 	z-index: 2;
-	height: 100%;
+	height: 108%;
 	width: 100%;
 }
 
-.overlay:hover {
-	opacity: 0.8;
-}
+
 /* Formulaire Inscription */
 .container-inscription {
-	background-color: #f2f5f8;
+}
+.container-inscription .sideRight {
+	
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.titrePageInscription {
+	text-align: center;
+
 }
 
 .container-inscription .sideRight form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin: 50px auto;
+	margin: 10px 15%;
 	width: 400px;
 	padding: 1em;
 	height: 350px;
   }
   .container-inscription .sideRight form input {
 	  border: 1px solid black;
+	  padding: 15px 0px;
+  }
+  .container-inscription .sideRight form input:focus {
+	  background-color: #172b4d;
+	  opacity: 0.6;
+	  color: white;
+	  font-weight: 600;
   }
 
   .submitButton {
@@ -594,3 +616,95 @@ svg:hover {
 	background-color: red;
 
 }
+
+/*Connexion */
+
+.textContainerConnexion {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	color: white;
+	z-index: 3;
+  }
+
+.form-control-checkbox {
+	padding: 10px;
+}
+
+
+.checkboxLogin {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 20px;
+	align-items: center;
+	justify-content: flex-start;
+	align-self: flex-start;
+}
+
+.container-connexion {
+    display:flex;
+    flex-direction: row;
+	height: 541px;
+}
+
+.textContainerConnexion {
+	position:absolute;
+	top: 50%;
+	left: 25%;
+	color: white;
+	z-index: 3;
+}
+
+.container-connexion .sideLeft {
+	position: relative;
+    width: 60%;
+	height: 500px;
+}
+
+.container-connexion .sideLeft .img_container {
+	object-fit: fill;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	background-color: black;
+	opacity: 0.3;
+	z-index: 2;
+	height: 108%;
+	width: 100%;
+}
+
+
+/* Formulaire connexion */
+.container-connexion .sideRight {
+	
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.titrePageConnexion {
+	text-align: center;
+
+}
+
+.container-connexion .sideRight form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 10px 15%;
+	width: 400px;
+	padding: 1em;
+	height: 350px;
+  }
+  .container-connexion .sideRight form input {
+	  border: 1px solid black;
+	  padding: 10px ;
+  }
+  .container-connexion .sideRight form input:focus {
+	  background-color: #172b4d;
+	  opacity: 0.6;
+	  color: white;
+	  font-weight: 600;
+  }

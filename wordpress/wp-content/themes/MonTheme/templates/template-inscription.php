@@ -12,12 +12,14 @@ if (is_user_logged_in()) {
 } else { ?>
     <div class="container-inscription">
         <div class="sideLeft">
+            <h2 class="textContainerInscription">Toujours la négociation avant l'habitation  ! </h2>
             <div class="img_container">
-                <img src="<?= get_template_directory_uri() . '/images/OIP.jpg'  ?>" alt="">
+                <img src="<?= get_template_directory_uri() . '/images/1200px-Pissevinnimes.JPG'  ?>" alt="">
                 <div class="overlay"></div>
             </div>
         </div>
         <div class="sideRight">
+            <h2 class="titrePageInscription">Inscrivez-vous !</h2>
             <form action="<?= admin_url('admin-post.php?action=inscription'); ?>" name="inscriptionform" method="POST">
                 <label for="inputIdentifiant" class="form-label"> Identifiant</label>
                 <input type="text" class="form-control" name="identifiant" id="inputIdentifiant">
