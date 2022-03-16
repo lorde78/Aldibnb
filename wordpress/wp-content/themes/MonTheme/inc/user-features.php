@@ -63,7 +63,7 @@ $listePublicationPost = add_action('admin_post_publier_form', function () {
     }else {
         wp_redirect($_POST['_wp_http_referer'] . '?status=no_nonce');
     }
-
+// set_post
     wp_insert_post($post_args);
     wp_redirect(home_url());
 
